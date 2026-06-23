@@ -221,8 +221,7 @@ const Home = () => {
           <div className="heading-line centered"></div>
           <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
           <form action="https://api.web3forms.com/submit" method="POST" className="contact-form">
-            {/* Replace YOUR_ACCESS_KEY_HERE with the access key from Web3Forms */}
-            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+            <input type="hidden" name="access_key" value="dadf0067-c185-44d6-a9b4-6e941d7d575a" />
             
             <div className="form-group">
               <input type="text" name="name" placeholder="Your Name" required />
