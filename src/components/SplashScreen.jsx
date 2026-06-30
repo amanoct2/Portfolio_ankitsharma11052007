@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import './SplashScreen.css';
+import React, { useEffect, useState } from "react";
+import "./SplashScreen.css";
 
 const SplashScreen = ({ onComplete }) => {
   const [isFadingOut, setIsFadingOut] = useState(false);
@@ -22,9 +22,9 @@ const SplashScreen = ({ onComplete }) => {
   }, [onComplete]);
 
   return (
-    <div className={`splash-screen ${isFadingOut ? 'fade-out' : ''}`}>
+    <div className={`splash-screen ${isFadingOut ? "fade-out" : ""}`}>
       <div className="splash-content">
-        <h1 className="splash-name">Abhishek</h1>
+        <h1 className="splash-name">Ankit.dev</h1>
       </div>
     </div>
   );

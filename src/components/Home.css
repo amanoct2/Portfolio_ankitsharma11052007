@@ -1,7 +1,9 @@
 .home-container {
   min-height: 100vh;
   /* Add background image with a dark overlay for text readability */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/bg_fixed.jpeg');
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("/bg_fixed.jpeg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -16,7 +18,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 2rem 5%;
-  background-color: rgba(0, 0, 0, 0.3); /* Transparent dark navbar */
+  background-color: rgba(0, 0, 0, 0.3);
+  /* Transparent dark navbar */
   backdrop-filter: blur(10px);
   position: fixed;
   top: 0;
@@ -31,12 +34,21 @@
   letter-spacing: 1px;
 }
 
+.icon-white {
+  width: 32px;
+  height: 32px;
+  filter: brightness(0) invert(1);
+}
+
+
+
 .logo-text {
   color: #ffffff;
 }
 
 .logo-dot {
-  color: #e50914; /* Accent color matching splash */
+  color: #e50914;
+  /* Accent color matching splash */
 }
 
 .nav-links {
@@ -62,7 +74,9 @@
   padding: 0.6rem 1.5rem;
   border-radius: 50px;
   font-weight: 600;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
 }
 
 .contact-btn:hover {
@@ -78,7 +92,8 @@
   align-items: center;
   justify-content: flex-start;
   padding: 0 5%;
-  margin-top: 80px; /* Offset for fixed navbar */
+  margin-top: 80px;
+  /* Offset for fixed navbar */
   min-height: calc(100vh - 80px);
 }
 
@@ -109,10 +124,29 @@
 
 .name {
   font-weight: 800;
-  color: #ffffff;
-  background: linear-gradient(90deg, #ffffff 0%, #dcdcdc 100%);
+  background: linear-gradient(120deg, #ffffff 0%, #e50914 30%, #9e9e9e 70%, #ffffff 100%);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation:
+    shine 4s linear infinite,
+    fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-subtitle {
@@ -137,7 +171,10 @@
   justify-content: center;
   align-items: center;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .hero-social img {
@@ -151,7 +188,7 @@
 }
 
 .hero-social.linkedin-social:hover {
-  border-color: #0077B5;
+  border-color: #0077b5;
 }
 
 .hero-social.github-social:hover {
@@ -164,7 +201,8 @@
   justify-content: flex-start;
 }
 
-.primary-btn, .secondary-btn {
+.primary-btn,
+.secondary-btn {
   padding: 0.8rem 2rem;
   font-size: 1rem;
   font-weight: 600;
@@ -205,17 +243,18 @@
     text-align: center;
     padding-top: 4rem;
   }
-  
+
   .hero-content {
     margin-bottom: 4rem;
   }
-  
+
   .hero-actions {
     justify-content: center;
   }
-  
+
   .nav-links {
-    display: none; /* Hide links on mobile for simplicity in this demo */
+    display: none;
+    /* Hide links on mobile for simplicity in this demo */
   }
 }
 
@@ -263,6 +302,49 @@
   margin: 0;
 }
 
+.about-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  text-align: left;
+}
+
+.highlight-icon {
+  font-size: 1.5rem;
+  background-color: rgba(229, 9, 20, 0.1);
+  color: #e50914;
+  width: 45px;
+  height: 45px;
+  min-width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 1px solid rgba(229, 9, 20, 0.2);
+}
+
+.highlight-item div strong {
+  color: #ffffff;
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.highlight-item div p {
+  color: #b0b0b0;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
 /* About Visual Orbit */
 .about-visual {
   flex: 1;
@@ -274,57 +356,209 @@
 
 .profile-visual-wrapper {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 440px;
+  height: 440px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.profile-image-wrapper {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  animation: floatProfile 6s ease-in-out infinite;
+}
+
+.profile-ripple {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgba(229, 9, 20, 0.15);
+  border: 1px solid rgba(229, 9, 20, 0.3);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ripple-1 {
+  animation: rippleWave 3s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+.ripple-2 {
+  animation: rippleWave 3s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  animation-delay: 1.5s;
+}
+
+.profile-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  padding: 5px;
+  background: linear-gradient(135deg, #e50914 0%, #ffffff 50%, #e50914 100%);
+  background-size: 200% 200%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  box-shadow: 0 0 35px rgba(229, 9, 20, 0.4);
+  animation: gradientMovement 4s linear infinite;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.profile-image-wrapper:hover .profile-image-container {
+  transform: scale(1.06);
+  box-shadow: 0 0 50px rgba(229, 9, 20, 0.7);
 }
 
 .profile-circle {
-  width: 250px;
-  height: 250px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #e50914;
-  z-index: 2;
-  box-shadow: 0 0 30px rgba(229, 9, 20, 0.3);
+  border: 4px solid #141414;
+  background-color: #242424;
 }
 
-.scatter-icon {
+@keyframes floatProfile {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes rippleWave {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes gradientMovement {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ===================================================
+   ORBIT ICON SYSTEM — proper CSS technique
+   Each .orbit-icon is placed at the wrapper center,
+   then: rotate(angle) → translateX(radius) → counter-rotate
+   This keeps every icon perfectly upright on the circle.
+   =================================================== */
+
+/* The ring sits exactly on top of the wrapper */
+.orbit-ring {
   position: absolute;
-  width: 50px;
-  height: 50px;
-  background-color: #242424;
+  inset: 0;                   /* fill the 440×440 wrapper */
+  pointer-events: none;
+}
+
+/* Every icon starts at the center of the ring */
+.orbit-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 54px;
+  height: 54px;
+  margin: -27px 0 0 -27px;   /* shift back by half icon size */
+
+  /* THE orbit formula:
+     1. rotate to the correct angle on the circle
+     2. push outward by the orbit radius (190px)
+     3. counter-rotate so the icon stays upright        */
+  transform:
+    rotate(var(--angle))
+    translateX(190px)
+    rotate(calc(-1 * var(--angle)));
+
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(6px);
+  border: 2px solid rgba(255, 255, 255, 0.12);
   border-radius: 50%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  z-index: 1;
-  animation: floatIcon 3s ease-in-out infinite;
+  gap: 0;
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.3s ease,
+              border-color 0.3s ease;
+  z-index: 5;
+
+  /* individual float animations via delay */
+  animation: orbit-pulse 3s ease-in-out infinite;
+  animation-delay: calc(var(--angle) / 45deg * -0.4s);
 }
 
-.scatter-icon img {
-  width: 25px;
-  height: 25px;
+.orbit-icon img {
+  width: 26px;
+  height: 26px;
   object-fit: contain;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: block;
 }
 
-/* Scattered in an arch over the top edge */
-.scatter-icon.icon-1 { top: 60px; left: -5px; animation-delay: 0s; }
-.scatter-icon.icon-2 { top: 10px; left: 50px; animation-delay: 0.5s; }
-.scatter-icon.icon-3 { top: -20px; left: 125px; animation-delay: 1s; }
-.scatter-icon.icon-4 { top: 10px; right: 50px; animation-delay: 1.5s; }
-.scatter-icon.icon-5 { top: 60px; right: -5px; animation-delay: 2s; }
-.scatter-icon.icon-6 { top: -30px; right: 80px; animation-delay: 2.5s; }
-
-@keyframes floatIcon {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
+.orbit-label {
+  font-size: 0.48rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.03em;
+  margin-top: 2px;
+  line-height: 1;
+  text-align: center;
 }
+
+/* Hover — scale the icon up, spin the image */
+.orbit-icon:hover {
+  transform:
+    rotate(var(--angle))
+    translateX(190px)
+    rotate(calc(-1 * var(--angle)))
+    scale(1.3);
+  border-color: rgba(229, 9, 20, 0.7);
+  box-shadow:
+    0 8px 30px rgba(229, 9, 20, 0.5),
+    0 0 0 1px rgba(229, 9, 20, 0.2) inset;
+  z-index: 10;
+}
+
+.orbit-icon:hover img {
+  transform: rotate(360deg);
+}
+
+/* Subtle pulse so icons feel alive */
+@keyframes orbit-pulse {
+  0%, 100% { filter: brightness(1);   }
+  50%       { filter: brightness(1.2); }
+}
+
+
 
 @media screen and (max-width: 900px) {
   .about-section {
@@ -332,10 +566,12 @@
     text-align: center;
     gap: 2rem;
   }
+
   .about-content {
     align-items: center;
     text-align: center;
   }
+
   .about-visual {
     margin-top: 3rem;
     margin-bottom: 3rem;
@@ -375,7 +611,9 @@
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   padding: 2rem;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .skill-category:hover {
@@ -407,14 +645,16 @@
   gap: 0.8rem;
 }
 
-.skill-item img, .skill-item svg.generic-icon {
+.skill-item img,
+.skill-item svg.generic-icon {
   width: 45px;
   height: 45px;
   object-fit: contain;
   transition: transform 0.2s ease;
 }
 
-.skill-item:hover img, .skill-item:hover svg.generic-icon {
+.skill-item:hover img,
+.skill-item:hover svg.generic-icon {
   transform: scale(1.1);
 }
 
@@ -462,7 +702,10 @@
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   padding: 2.5rem 2rem;
-  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -508,7 +751,8 @@
 /* Projects Section */
 .projects-section {
   padding: 5rem 5%;
-  background-color: rgba(26, 26, 26, 0.85); /* Dark background matching the theme */
+  background-color: rgba(26, 26, 26, 0.85);
+  /* Dark background matching the theme */
   backdrop-filter: blur(5px);
   display: flex;
   flex-direction: column;
@@ -545,7 +789,9 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 2rem;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .project-card:hover {
@@ -613,7 +859,11 @@
 /* Contact Section */
 .contact-section {
   padding: 6rem 5%;
-  background: linear-gradient(to top, rgba(15, 15, 15, 1), rgba(26, 26, 26, 0.85));
+  background: linear-gradient(
+    to top,
+    rgba(15, 15, 15, 1),
+    rgba(26, 26, 26, 0.85)
+  );
   backdrop-filter: blur(5px);
   display: flex;
   justify-content: center;
@@ -664,7 +914,9 @@
   color: #ffffff;
   font-size: 1rem;
   font-family: inherit;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
   box-sizing: border-box;
 }
 
@@ -698,7 +950,10 @@
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
   align-self: center;
 }
 
@@ -741,7 +996,10 @@
   justify-content: center;
   align-items: center;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .social-link img {
@@ -755,9 +1013,11 @@
 }
 
 .social-link.linkedin-social:hover {
-  border-color: #0077B5; /* LinkedIn Blue */
+  border-color: #0077b5;
+  /* LinkedIn Blue */
 }
 
 .social-link.github-social:hover {
-  border-color: #ffffff; /* GitHub White */
+  border-color: #ffffff;
+  /* GitHub White */
 }
