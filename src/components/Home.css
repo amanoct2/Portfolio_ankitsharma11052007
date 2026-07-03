@@ -1,9 +1,15 @@
 .home-container {
   min-height: 100vh;
-  /* Add background image with a dark overlay for text readability */
-  background-color: #1a0000;
+  /* Deep navy-cyan overlay on background image */
+  background-color: #000d1a;
   background-image:
-    linear-gradient(135deg, rgba(0, 0, 0, 0.55) 0%, rgba(20, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.55) 100%),
+    linear-gradient(
+      135deg,
+      rgba(0, 8, 30, 0.72) 0%,
+      rgba(0, 30, 60, 0.55) 40%,
+      rgba(0, 100, 160, 0.30) 70%,
+      rgba(0, 198, 255, 0.10) 100%
+    ),
     url("/bg_fixed.jpeg");
   background-size: cover;
   background-position: center top;
@@ -13,6 +19,7 @@
   display: flex;
   flex-direction: column;
 }
+
 
 /* Navbar Styles */
 .navbar {
@@ -49,8 +56,8 @@
 }
 
 .logo-dot {
-  color: #e50914;
-  /* Accent color matching splash */
+  color: #00c6ff;
+  /* Accent color */
 }
 
 .nav-links {
@@ -67,7 +74,7 @@
 }
 
 .nav-link:hover {
-  color: #e50914;
+  color: #00c6ff;
 }
 
 .contact-btn {
@@ -82,8 +89,8 @@
 }
 
 .contact-btn:hover {
-  background-color: #e50914;
-  color: white;
+  background-color: #00c6ff;
+  color: #000d1a;
   transform: translateY(-2px);
 }
 
@@ -127,7 +134,7 @@
 
 .name {
   font-weight: 800;
-  background: linear-gradient(120deg, #ffffff 0%, #e50914 30%, #ff6b6b 60%, #ffffff 100%);
+  background: linear-gradient(120deg, #ffffff 0%, #00c6ff 30%, #0072ff 60%, #ffffff 100%);
   background-size: 300% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
