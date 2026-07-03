@@ -1,7 +1,47 @@
 import React, { useEffect, useState } from "react";
 import "./Home.css";
 
+const GREETING = "Hello, I'm";
+const NAME = "Ankit Sharma";
+
 const Home = () => {
+  const [greetingText, setGreetingText] = useState("");
+  const [nameText, setNameText] = useState("");
+  const [phase, setPhase] = useState("greeting"); // 'greeting' | 'name' | 'done'
+
+  // Typewriter logic — loops infinitely
+  useEffect(() => {
+    let timeout;
+
+    if (phase === "greeting") {
+      if (greetingText.length < GREETING.length) {
+        timeout = setTimeout(() => {
+          setGreetingText(GREETING.slice(0, greetingText.length + 1));
+        }, 80);
+      } else {
+        timeout = setTimeout(() => setPhase("name"), 400);
+      }
+    } else if (phase === "name") {
+      if (nameText.length < NAME.length) {
+        timeout = setTimeout(() => {
+          setNameText(NAME.slice(0, nameText.length + 1));
+        }, 90);
+      } else {
+        timeout = setTimeout(() => setPhase("done"), 2000); // pause before reset
+      }
+    } else if (phase === "done") {
+      // Reset and loop
+      timeout = setTimeout(() => {
+        setGreetingText("");
+        setNameText("");
+        setPhase("greeting");
+      }, 1500);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [phase, greetingText, nameText]);
+
+
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://platform.linkedin.com/badgely/v1/badge.js";
@@ -14,6 +54,7 @@ const Home = () => {
       document.body.removeChild(script);
     };
   }, []);
+
 
   return (
     <div className="home-container">
@@ -41,9 +82,14 @@ const Home = () => {
       <main className="hero-section">
         <div className="hero-content">
           <h1 className="hero-title">
-            <span className="greeting">Hello, I'm</span>
-            <span className="name">Ankit Sharma</span>
+            <span className="greeting">
+              {greetingText}
+            </span>
+            <span className="name">
+              {nameText}
+            </span>
           </h1>
+
           <p className="hero-subtitle">
             ASP.NET Developer | C# | SQL Server | Web API | GitHub | Docker |
             Power BI
