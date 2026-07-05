@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Certificates from "./Certificates";
 import "./Home.css";
 
 const GREETING = "Hello, I'm";
@@ -400,10 +401,10 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section >
+      </section>
 
       {/* ================= SERVICES SECTION ================= */}
-      < section id="services" className="services-section" >
+      <section id="services" className="services-section">
         <div className="services-header">
           <h2>What I Do</h2>
           <div className="heading-line"></div>
@@ -454,10 +455,10 @@ const Home = () => {
             </p>
           </div>
         </div>
-      </section >
+      </section>
 
       {/* =================Yaha se code karna hai ================= */}
-      < section id="projects" className="projects-section" >
+      <section id="projects" className="projects-section">
         <div className="projects-header">
           <h2>Featured Projects</h2>
           <div className="heading-line"></div>
@@ -641,7 +642,10 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section >
+      </section>
+
+      {/* ================= CERTIFICATES SECTION ================= */}
+      <Certificates />
 
       <section id="contact" className="contact-section">
         <div className="contact-content">
