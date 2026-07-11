@@ -173,7 +173,13 @@ const Home = () => {
               </div>
             </div>
             <div className="highlight-item">
-              <span className="highlight-icon">📊</span>
+              <span className="highlight-icon">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
+                  alt="Power BI"
+                  style={{ width: "1em", height: "1em", display: "inline-block" }}
+                />
+              </span>
               <div>
                 <strong>Data Analytics & Reporting</strong>
                 <p>
@@ -395,7 +401,10 @@ const Home = () => {
               </div>
 
               <div className="skill-item">
-                <span>📊</span>
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
+                  alt="Power BI"
+                />
                 <span>Power BI</span>
               </div>
             </div>
@@ -445,7 +454,13 @@ const Home = () => {
           </div>
 
           <div className="service-card">
-            <div className="service-icon">📊</div>
+            <div className="service-icon">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
+                alt="Power BI"
+                style={{ width: "1em", height: "1em", display: "inline-block" }}
+              />
+            </div>
 
             <h3>Power BI Reporting</h3>
 
